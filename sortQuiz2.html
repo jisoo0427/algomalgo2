@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>알고말고</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/icon.png">
+  <link rel = "stylesheet" href = "menu.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light" id="menunav">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/name.jpg" alt="logo" style="width:160px;"> </a>
+  </nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-1 sidenav text-left">
+      <button class="dropdown-btn"><img src="img/sortm.png" id="menuimg"/>정렬</button>
+      <div class="dropdown-container">
+        <a href="quickSort.html">퀵정렬</a><br/>
+        <a href="sortQuiz1.html">퀴즈</a>
+      </div><br />
+
+      <button class="dropdown-btn"><img src="img/search.png" id="menuimg"/>탐색</button>
+      <div class="dropdown-container">
+        <a href="binarySearch.html">이진탐색</a><br/>
+        <a href="#">DFS</a>
+      </div>
+    </div>
+
+    <div class="col-sm-10 text-left">
+      <h1>Quiz</h1>
+      <p>문제2. 다음은 삽입정렬의 코드이다. 빈 칸에 들어갈 내용을 작성하세요.</p>
+      <img src = "img/quiz2.png" style="width:700px;"/>
+
+        <div class="form-group">
+          <label>1</label>
+          <input type="text" id="q1"><img src ="" id="res1" style="width:60px;">
+        </div>
+        <div class="form-group">
+          <labe>2</label>
+          <input type="text" id="q2"><img src ="" id="res2" style="width:60px;">
+        </div>
+        <div class="form-group">
+          <labe>3</label>
+          <input type="text" id="q3"><img src ="" id="res3" style="width:60px;">
+        </div>
+
+        <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">확인</button>
+        <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">해설</button>
+        <a href="sortQuiz1.html" class="btn btn-lg btn-secondary">이전</a>
+
+    </div>
+
+  </div>
+</div>
+
+<script>
+function quiz1check(){
+  var select1 = document.getElementById("q1").value;
+  var select2 = document.getElementById("q2").value;
+  var select3 = document.getElementById("q3").value;
+
+  var res1 = document.getElementById("res1");
+  var res2 = document.getElementById("res2");
+  var res3 = document.getElementById("res3");
+
+  if(select1=="n-1") res.src = "img/right.png";
+  else res.src = "img/wrong.png";
+  if (select2=="i+1") res.src = "img/right.png";
+  else res.src = "img/wrong.png";
+}
+</script>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+
+</body>
+</html>
