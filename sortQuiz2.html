@@ -51,6 +51,13 @@
           <labe>3</label>
           <input type="text" id="q3"><img src ="" id="res3" style="width:60px;">
         </div>
+      
+        <div id="ex" style ="display:none;">
+          <p>1회전 후: 27, 91, 38, 4, 97 </p>
+          <p>2회전 후: 27, 38, 4, 91, 97 </p>
+          <p>3회전 후: 27, 4, 38, 91, 97 </p>
+          <p>4회전 후: 4, 27, 38, 91, 97 </p>
+        </div>
 
         <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">확인</button>
         <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">해설</button>
@@ -75,6 +82,10 @@ function quiz1check(){
   else res.src = "img/wrong.png";
   if (select2=="i+1") res.src = "img/right.png";
   else res.src = "img/wrong.png";
+}
+  
+function showex1check(){
+  document.getElementById('ex').style.display='block';
 }
 </script>
 
