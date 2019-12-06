@@ -36,7 +36,7 @@
     </div>
 
     <div class="col-sm-10 text-left">
-      <h1>Quick Sort</h1>
+      <h1>Quick Sort</h1> <br /><br />
       <h2>1. 이해하기</h2>
       <ul>
         <li>시간복잡도        </li>
@@ -51,7 +51,6 @@
 
 
     <div class="wrapper text-center">
-      <img src ="quick/quick1.gif" id="mainImg">
     <div class="btn-group btn-group-lg" role="group">
       <button type="button" onclick="prevBtn()" class="btn btn-default">prev</button>
       <button type="button" onclick="replayBtn()" class="btn btn-default">
@@ -59,11 +58,30 @@
       <button type="button" onclick="nextBtn()" class="btn btn-default">next</button>
     </div>
     </div>
+    <br /><br /><br />
     <h2>2. 코드와 함께보기</h2>
+    <img src = "img/quicksort.png" style="width:700px;"/>
+    <br /><br /><br />
     <h2>3. 코드</h2>
       <pre class="prettyprint">
         <link rel="stylesheet" type="python" href="./images/tomorrow-night.css" />
-        import *
+        def quickSort(a):
+          left = []
+          right = []
+          if len(a)<2:
+            return a
+          else:
+            pivot = a[0]
+            for i in range(1, len(a)):
+              if pivot < a[i]:
+                right.append(a[i])
+              else:
+                left.append(a[i])
+          return quickSort(left) + [pivot] + quickSort(right)
+
+        a = [14, 4, 92, 32, 25]
+        print(a)
+        print(quickSort(a))
       </pre>
 
 
