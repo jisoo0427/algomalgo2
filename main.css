@@ -9,11 +9,19 @@
 .jumbotron h2{
   font-family: "THE외계인설명서";
   font-size: 6vw;
-  padding:
   text-align: center;
   color:#41A0FB;
 }
 
 .card-body{
   padding: 0.3rem;
+}
+
+.footer {
+  color: #41A0FB;
+  font-size: 15px;
+  margin-top: 100px;
+  border-top: 1px solid #C1E4FF;
+  padding: 10px 0 10px;
+  text-align: center;
 }

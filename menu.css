@@ -75,8 +75,26 @@
 }
 
 h1{
-  font-family: "THE외계인설명서";
+  font-family: "새굴림";
   color: #41A0FB;
+}
+
+#quiz button{
+  background-color: #41A0FB;
+  color: #FFF;
+  font-style: bold;
+  font-size:12pt;
+  font-weight:bold
+}
+
+#quiz a{
+  background-color: #FFC000;
+  border: 0px;
+  color: #000;
+  font-style: bold;
+  font-size:12pt;
+  margin:auto;
+  font-weight:bold
 }
 
 p{
@@ -87,11 +105,15 @@ td{
   font-size: 20pt;
 }
 
-#check{
-  background-color: #41A0FB;
-  color: #FFF;
-}
 
+.footer {
+  color: #41A0FB;
+  font-size: 15px;
+  margin-top: 100px;
+  border-top: 1px solid #C1E4FF;
+  padding: 10px 0 10px;
+  text-align: center;
+}
 
 
 /* On small screens, set height to 'auto' for sidenav and grid */

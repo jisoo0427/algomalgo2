@@ -26,6 +26,7 @@
       <button class="dropdown-btn"><img src="img/sortm.png" id="menuimg"/>정렬</button>
       <div class="dropdown-container">
         <a href="quickSort.html">퀵정렬</a><br/>
+        <a href="selectionSort.html">선택정렬</a><br/>
         <a href="sortQuiz1.html">퀴즈</a>
       </div><br />
 
@@ -44,12 +45,9 @@
         <li>시간복잡도        </li>
         <li>분할정복</li>
       </ul>
-      <ul>
-        <li>1. 리스트 가운데서 하나의 원소를 고른다. 이렇게 고른 원소를 피벗이라고 한다. </li>
-        <li>2. 피벗 앞에는 피벗보다 값이 작은 모든 원소들이 오고, 피벗 뒤에는 피벗보다 값이 큰 모든 원소들이 오도록 피벗을 기준으로 리스트를 둘로 나눈다.
-          이렇게 리스트를 둘로 나누는 것을 분할이라고 한다. 분할을 마친 뒤에 피벗은 더 이상 움직이지 않는다. </li>
-        <li>3. 분할된 두 개의 작은 리스트에 대해 재귀(Recursion)적으로 이 과정을 반복한다. 재귀는 리스트의 크기가 0이나 1이 될 때까지 반복된다. </li>
-      </ul>
+      <p>1. 리스트 가운데서 하나의 원소(피벗)를 고른다.</p>
+      <p>2. (분할) 피벗을 기준으로 리스트를 둘로 나눈다. </br>피벗 앞에는 피벗보다 값이 작은 모든 원소들, 피벗 뒤에는 피벗보다 값이 큰 모든 원소들이 오도록 한다.</p>
+      <p>3. 분할된 작은 리스트에 대해 재귀적으로 이 과정을 반복한다. 재귀는 리스트의 크기가 0이나 1이 될 때까지 반복된다.</p>
 
 
     <div class="wrapper text-center">
@@ -68,29 +66,33 @@
     <br /><br /><br />
     <h2>3. 코드</h2>
       <pre class="prettyprint">
-        def quickSort(a):
+        def quickSort(data):
           left = []
           right = []
-          if len(a)<2:
-            return a
+          if len(data)<2:
+            return data
           else:
-            pivot = a[0]
-            for i in range(1, len(a)):
-              if pivot < a[i]:
-                right.append(a[i])
+            pivot = data[0]
+            for i in range(1, len(data)):
+              if pivot < data[i]:
+                right.append(data[i])
               else:
-                left.append(a[i])
+                left.append(data[i])
           return quickSort(left) + [pivot] + quickSort(right)
 
-        a = [14, 4, 92, 32, 25]
-        print(a)
-        print(quickSort(a))
+        data = [14, 4, 92, 32, 25]
+        print(data)
+        print(quickSort(data))
       </pre>
 
 
     </div>
 
   </div>
+</div>
+
+<div class="footer">
+  <p>교육용 멀티미디어 Final Project</p>
 </div>
 
 <script>

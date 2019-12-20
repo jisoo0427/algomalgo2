@@ -3,7 +3,6 @@
 <head>
   <title>알고말고</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="img/icon.png">
   <link rel = "stylesheet" href = "menu.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,6 +23,7 @@
       <button class="dropdown-btn"><img src="img/sortm.png" id="menuimg"/>정렬</button>
       <div class="dropdown-container">
         <a href="quickSort.html">퀵정렬</a><br/>
+        <a href="selectionSort.html">선택정렬</a><br/>
         <a href="sortQuiz1.html">퀴즈</a>
       </div><br />
 
@@ -34,8 +34,12 @@
       </div>
     </div>
 
-    <div class="col-sm-10 text-left">
-      <h1>Quiz<img src ="" id="res" style="width:60px;"></h1>
+    <div class="col-sm-10 text-left" id="quiz">
+      <h1>Quiz<img src ="img/blank.png" id="res" style="width:60px;">
+        <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">확인</button>
+        <button type="button" onclick="showex1check()" class="btn btn-default" id="showex">해설</button>
+        <a href="sortQuiz2.html" class="btn btn-lg btn-secondary">다음 ▶</a>
+      </h1>
       <p>문제1. 다음 수들을 버블 정렬을 이용하여 오름차순으로 정렬할 경우 2회전 이후의 결과를 고르세요.<br />
         <table border=1 width=200 height=30 align = "center">
           <tr align="center">
@@ -71,22 +75,25 @@
         </div>
 
         <div id="ex" style ="display:none;">
+          <p></p>
+          <p>[해설] </p>
           <p>1회전 후: 27, 91, 38, 4, 97 </p>
           <p>2회전 후: 27, 38, 4, 91, 97 </p>
           <p>3회전 후: 27, 4, 38, 91, 97 </p>
           <p>4회전 후: 4, 27, 38, 91, 97 </p>
         </div>
 
-        <button type="button" onclick="quiz1check()" class="btn btn-default" id="check">확인</button>
-        <button type="button" onclick="showex1check()" class="btn btn-default" id="showex">해설</button>
-        <a href="sortQuiz2.html" class="btn btn-lg btn-secondary">다음</a>
-
     </div>
 
   </div>
 </div>
 
+<div class="footer">
+  <p>교육용 멀티미디어 Final Project</p>
+</div>
+
 <script>
+var show = 0;
 function quiz1check(){
   var select = document.getElementsByName("sortingQuiz1");
   var res = document.getElementById("res");
@@ -95,7 +102,14 @@ function quiz1check(){
 }
 
 function showex1check(){
-  document.getElementById('ex').style.display='block';
+  if (!show){
+    document.getElementById('ex').style.display='block';
+    show = 1;
+  }
+  else{
+    document.getElementById('ex').style.display='none';
+    show = 0;
+  }
 }
 </script>
 
